@@ -1,0 +1,823 @@
+
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+    <!--Bootstrap CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!--Jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!--A little custom CSS-->
+    <style>
+        html {
+            font-family: Helvetica, Arial, sans-serif
+        }
+
+        body {
+            font-size: 16px;
+            line-height: 20px;
+        }
+
+        .narrow {
+        max-width: 700px;
+        margin: auto
+        }
+
+        .wide {
+        max-width: 1200px;
+        margin: auto
+        }
+
+        .larger {
+        font-size: 28px;
+        }
+
+        #showMe {
+        display: none;
+        }
+
+        .aboutbox {
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+
+    </style>
+
+</head>
+
+
+
+<body>
+        <div class="narrow">
+        <h1 id="top">Interactive Evergreen Checklist</h1>
+
+        <div class="aboutbox p-3 my-4">
+            <p>This is a simple interactive form of Dr. Stephanie Evergreen's <a href="https://stephanieevergreen.com/wp-content/uploads/2020/12/EvergreenDataVizChecklist.pdf">Data Visualization Checklist</a>, which I built as a helpful internal tool. All credit for the content, text, and guidelines are due to Evergreen and Ann K. Emery.</p>
+            <p>While I built the in-page functionality to score your visualization, all credit for the content, text, guidelines, etc of this tool are due to Evergreen and Ann K. Emery, and I have sought to preserve all of the content in the tool that they originally published. <a href="https://stephanieevergreen.com/data-visualization-checklist/">Read more about the Data Visualization Checklist</a>.</p>
+        </div>
+
+        <p>This checklist is meant to be used as a guide for the development of high impact data visualizations. Rate each aspect of the data visualization
+            by circling the most appropriate number:
+            <ul>
+                <li>2 points means the guideline was fully met</li>
+                <li>1 means it was partially met</li>
+                <li>0 means it was not
+                    met at all</li>
+            </ul>
+            N/A should not be used frequently, but reserved for when the guideline truly does not apply. For example, a pie chart has no axes lines
+            or tick marks to rate. If the guideline has been broken intentionally to make a point, rate it n/a and deduct those points from the total possible.
+            Refer to the Data Visualization Anatomy Chart on the last page for guidance on vocabulary and the Resources at the end for more details.</p>
+
+        <div class="aboutbox p-3 my-4">
+            <p>Note that currently, in my tool, you can select both a value and N/A. You shouldn't.</p>
+            <p>And, once you click N/A, you can't unclick it for that question. I'm working on it, OK?</p>
+        </div>
+        </div>
+
+        <div class="wide">
+
+            <!--Text-->
+            <div class="row my-5">
+                <h2>Text</h2>
+                <p>Graphs don't contain much text, so existing text must encapsulate your message and pack a punch.</p>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Guideline</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Rating</th>
+        
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">6-12 word descriptive title is left-justified in upper left corner</th>
+                        <td>Short titles enable readers to comprehend takeaway messages even while quickly skimming the graph. Rather
+                            than a generic phrase, use a descriptive sentence that encapsulates the graph’s finding or “so what?” Western
+                            cultures start reading in the upper left, so locate the title there.</td>
+    
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Radio toggle button group">
+                                <input type="radio" class="btn-check" name="q1" id="q1-2" autocomplete="off" value="2">
+                                <label class="btn btn-outline-primary" for="q1-2">2</label>
+                              
+                                <input type="radio" class="btn-check" name="q1" id="q1-1" autocomplete="off" value="1">
+                                <label class="btn btn-outline-primary" for="q1-1">1</label>
+                              
+                                <input type="radio" class="btn-check" name="q1" id="q1-0" autocomplete="off" value="0">
+                                <label class="btn btn-outline-primary" for="q1-0">0</label>
+                              </div>
+                        </td>
+    
+                        <td>
+                            <input type="radio" class="btn-check ml-2" name="na1" id="q1-na" autocomplete="off" value="2">
+                            <label class="btn btn-outline-secondary" for="q1-na">N/A</label>
+                        </td>
+                      </tr>
+    
+                      <tr>
+                        <th scope="row">Subtitle and/or annotations provide additional information</th>
+                        <td>Subtitles and annotations (call-out text within the graph) can add explanatory and interpretive power to a
+                            graph. Use them to answer questions a viewer might have or to highlight specific data points. </td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Radio toggle button group">
+                                <input type="radio" class="btn-check" name="q2" id="q2-2" autocomplete="off" value="2">
+                                <label class="btn btn-outline-primary" for="q2-2">2</label>
+                              
+                                <input type="radio" class="btn-check" name="q2" id="q2-1" autocomplete="off" value="1">
+                                <label class="btn btn-outline-primary" for="q2-1">1</label>
+                              
+                                <input type="radio" class="btn-check" name="q2" id="q2-0" autocomplete="off" value="0">
+                                <label class="btn btn-outline-primary" for="q2-0">0</label>
+                              </div>
+                        </td>
+                        <td>
+                            <input type="radio" class="btn-check ml-2" name="na2" id="q2-na" autocomplete="off" value="2">
+                            <label class="btn btn-outline-secondary" for="q2-na">N/A</label>
+                        </td>
+                      </tr>
+    
+                      <tr>
+                        <th scope="row">Text size is hierarchical and readable</th>
+                        <td>Titles are in a larger size than subtitles or annotations, which are larger than labels, which are larger than axis
+                            labels, which are larger than source information. The smallest text - axis labels - are at least 9 point font size on
+                            paper, at least 20 on screen.</td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Radio toggle button group">
+                                    <input type="radio" class="btn-check" name="q3" id="q3-2" autocomplete="off" value="2">
+                                    <label class="btn btn-outline-primary" for="q3-2">2</label>
+                                  
+                                    <input type="radio" class="btn-check" name="q3" id="q3-1" autocomplete="off" value="1">
+                                    <label class="btn btn-outline-primary" for="q3-1">1</label>
+                                  
+                                    <input type="radio" class="btn-check" name="q3" id="q3-0" autocomplete="off" value="0">
+                                    <label class="btn btn-outline-primary" for="q3-0">0</label>
+                                  </div>
+                            </td>
+        
+                            <td>
+                                <input type="radio" class="btn-check ml-2" name="na3" id="q3-na" autocomplete="off" value="2">
+                                <label class="btn btn-outline-secondary" for="q3-na">N/A</label>
+                            </td>
+                      </tr>
+    
+                      <tr>
+                        <th scope="row">Text is horizontal</th>
+                        <td>Titles, subtitles, annotations, and data labels are horizontal (not vertical or diagonal). Line labels and axis
+                            labels can deviate from this rule and still receive full points. Consider switching graph orientation (e.g., from
+                            column to bar chart) to make text horizontal.</td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Radio toggle button group">
+                                    <input type="radio" class="btn-check" name="q4" id="q4-2" autocomplete="off" value="2">
+                                    <label class="btn btn-outline-primary" for="q4-2">2</label>
+                                  
+                                    <input type="radio" class="btn-check" name="q4" id="q4-1" autocomplete="off" value="1">
+                                    <label class="btn btn-outline-primary" for="q4-1">1</label>
+                                  
+                                    <input type="radio" class="btn-check" name="q4" id="q4-0" autocomplete="off" value="0">
+                                    <label class="btn btn-outline-primary" for="q4-0">0</label>
+                                  </div>
+                            </td>
+        
+                            <td>
+                                <input type="radio" class="btn-check ml-2" name="na4" id="q4-na" autocomplete="off" value="2">
+                                <label class="btn btn-outline-secondary" for="q4-na">N/A</label>
+                            </td>
+                      </tr>
+    
+                      <tr>
+                        <th scope="row">Data are labeled directly</th>
+                        <td>Position data labels near the data rather than in a separate legend (e.g., on top of or next to bars and next to
+                            lines). Eliminate/embed legends when possible because eye movement back and forth between the legend and
+                            the data can interrupt the brain’s attempts to interpret the graph. </td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Radio toggle button group">
+                                    <input type="radio" class="btn-check" name="q5" id="q5-2" autocomplete="off" value="2">
+                                    <label class="btn btn-outline-primary" for="q5-2">2</label>
+                                  
+                                    <input type="radio" class="btn-check" name="q5" id="q5-1" autocomplete="off" value="1">
+                                    <label class="btn btn-outline-primary" for="q5-1">1</label>
+                                  
+                                    <input type="radio" class="btn-check" name="q5" id="q5-0" autocomplete="off" value="0">
+                                    <label class="btn btn-outline-primary" for="q5-0">0</label>
+                                  </div>
+                            </td>
+        
+                            <td>
+                                <input type="radio" class="btn-check ml-2" name="na5" id="q5-na" autocomplete="off" value="2">
+                                <label class="btn btn-outline-secondary" for="q5-na">N/A</label>
+                            </td>
+                      </tr>
+    
+                      <tr>
+                        <th scope="row">Labels are used sparingly</th>
+                        <td>Focus attention by removing the redundancy. For example, in line charts, label every other year on an axis. Do
+                            not add numeric labels *and* use a y-axis scale, since this is redundant. </td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Radio toggle button group">
+                                    <input type="radio" class="btn-check" name="q6" id="q6-2" autocomplete="off" value="2">
+                                    <label class="btn btn-outline-primary" for="q6-2">2</label>
+                                  
+                                    <input type="radio" class="btn-check" name="q6" id="q6-1" autocomplete="off" value="1">
+                                    <label class="btn btn-outline-primary" for="q6-1">1</label>
+                                  
+                                    <input type="radio" class="btn-check" name="q6" id="q6-0" autocomplete="off" value="0">
+                                    <label class="btn btn-outline-primary" for="q6-0">0</label>
+                                  </div>
+                            </td>
+        
+                            <td>
+                                <input type="radio" class="btn-check ml-2" name="na6" id="q6-na" autocomplete="off" value="2">
+                                <label class="btn btn-outline-secondary" for="q6-na">N/A</label>
+                            </td>
+                      </tr>
+        
+                    </tbody>
+                  </table>
+            </div>
+
+            <!--Arrangement-->
+            <div class="row my-5">
+                <h2>Arrangement</h2>
+                <p>Improper arrangement of graph elements can confuse readers at best and mislead viewer at worst. Thoughtful arrangement makes a data visualization easier for a viewer to interpret.</p>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Guideline</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Rating</th>
+        
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">Proportions are accurate</th>
+                        <td>A viewer should be able measure the length or area of the graph with a ruler and find that it matches the
+                            relationship in the underlying data. Y-axis scales should be appropriate. Bar charts start axes at 0. Other graphs
+                            can have a minimum and maximum scale that reflects what should be an accurate interpretation of the data
+                            (e.g., the stock market ticker should not start at 0 or we won’t see a meaningful pattern).</td>
+    
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Radio toggle button group">
+                                <input type="radio" class="btn-check" name="q7" id="q7-2" autocomplete="off" value="2">
+                                <label class="btn btn-outline-primary" for="q7-2">2</label>
+                              
+                                <input type="radio" class="btn-check" name="q7" id="q7-1" autocomplete="off" value="1">
+                                <label class="btn btn-outline-primary" for="q7-1">1</label>
+                              
+                                <input type="radio" class="btn-check" name="q7" id="q7-0" autocomplete="off" value="0">
+                                <label class="btn btn-outline-primary" for="q7-0">0</label>
+                              </div>
+                        </td>
+    
+                        <td>
+                            <input type="radio" class="btn-check ml-2" name="na7" id="q7-na" autocomplete="off" value="2">
+                            <label class="btn btn-outline-secondary" for="q7-na">N/A</label>
+                        </td>
+                      </tr>
+    
+                      <tr>
+                        <th scope="row">Data are intentionally ordered</th>
+                        <td>Data should be displayed in an order that makes logical sense to the viewer. Data may be ordered by frequency
+                            counts (e.g., from greatest to least for nominal categories), by groupings or bins (e.g., histograms), by time
+                            period (e.g., line charts), alphabetically, etc. Use an order that supports interpretation of the data.</td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Radio toggle button group">
+                                <input type="radio" class="btn-check" name="q8" id="q8-2" autocomplete="off" value="2">
+                                <label class="btn btn-outline-primary" for="q8-2">2</label>
+                              
+                                <input type="radio" class="btn-check" name="q8" id="q8-1" autocomplete="off" value="1">
+                                <label class="btn btn-outline-primary" for="q8-1">1</label>
+                              
+                                <input type="radio" class="btn-check" name="q8" id="q8-0" autocomplete="off" value="0">
+                                <label class="btn btn-outline-primary" for="q8-0">0</label>
+                              </div>
+                        </td>
+                        <td>
+                            <input type="radio" class="btn-check ml-2" name="na8" id="q8-na" autocomplete="off" value="2">
+                            <label class="btn btn-outline-secondary" for="q8-na">N/A</label>
+                        </td>
+                      </tr>
+    
+                      <tr>
+                        <th scope="row">Axis intervals are equidistant</th>
+                        <td>The spaces between axis intervals should be the same unit, even if every axis interval isn’t labeled. Irregular
+                            data collection periods can be noted with markers on a line graph, for example.</td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Radio toggle button group">
+                                    <input type="radio" class="btn-check" name="q9" id="q9-2" autocomplete="off" value="2">
+                                    <label class="btn btn-outline-primary" for="q9-2">2</label>
+                                  
+                                    <input type="radio" class="btn-check" name="q9" id="q9-1" autocomplete="off" value="1">
+                                    <label class="btn btn-outline-primary" for="q9-1">1</label>
+                                  
+                                    <input type="radio" class="btn-check" name="q9" id="q9-0" autocomplete="off" value="0">
+                                    <label class="btn btn-outline-primary" for="q9-0">0</label>
+                                  </div>
+                            </td>
+        
+                            <td>
+                                <input type="radio" class="btn-check ml-2" name="na9" id="q9-na" autocomplete="off" value="2">
+                                <label class="btn btn-outline-secondary" for="q9-na">N/A</label>
+                            </td>
+                      </tr>
+    
+                      <tr>
+                        <th scope="row">Graph is two-dimensional</th>
+                        <td>Avoid three-dimensional displays, bevels, and other distortions.</td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Radio toggle button group">
+                                    <input type="radio" class="btn-check" name="q10" id="q10-2" autocomplete="off" value="2">
+                                    <label class="btn btn-outline-primary" for="q10-2">2</label>
+                                  
+                                    <input type="radio" class="btn-check" name="q10" id="q10-1" autocomplete="off" value="1">
+                                    <label class="btn btn-outline-primary" for="q10-1">1</label>
+                                  
+                                    <input type="radio" class="btn-check" name="q10" id="q10-0" autocomplete="off" value="0">
+                                    <label class="btn btn-outline-primary" for="q10-0">0</label>
+                                  </div>
+                            </td>
+        
+                            <td>
+                                <input type="radio" class="btn-check ml-2" name="na10" id="q10-na" autocomplete="off" value="2">
+                                <label class="btn btn-outline-secondary" for="q10-na">N/A</label>
+                            </td>
+                      </tr>
+    
+                      <tr>
+                        <th scope="row">Display is free from decoration</th>
+                        <td>Graph is free from clipart or other illustrations used solely for decoration. Some graphics, like icons, can
+                            support interpretation.</td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Radio toggle button group">
+                                    <input type="radio" class="btn-check" name="q11" id="q11-2" autocomplete="off" value="2">
+                                    <label class="btn btn-outline-primary" for="q11-2">2</label>
+                                  
+                                    <input type="radio" class="btn-check" name="q11" id="q11-1" autocomplete="off" value="1">
+                                    <label class="btn btn-outline-primary" for="q11-1">1</label>
+                                  
+                                    <input type="radio" class="btn-check" name="q11" id="q11-0" autocomplete="off" value="0">
+                                    <label class="btn btn-outline-primary" for="q11-0">0</label>
+                                  </div>
+                            </td>
+        
+                            <td>
+                                <input type="radio" class="btn-check ml-2" name="na11" id="q11-na" autocomplete="off" value="2">
+                                <label class="btn btn-outline-secondary" for="q11-na">N/A</label>
+                            </td>
+                      </tr>
+    
+                    </tbody>
+                  </table>
+            </div>
+
+            <!--Color-->
+            <div class="row my-5">
+                <h2>Color</h2>
+                <p>Keep culture-based color connotations in mind. For example, pink is associated with feminine qualities in the USA. Use ColorBrewer to find palettes suitable for reprinting in black-and-white and for colorblindness.</p>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Guideline</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Rating</th>
+        
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">Color scheme is intentional</th>
+                        <td>Colors should represent brand or other intentional choice, not default color schemes. Use your organization’s
+                            colors or your client’s colors. Work with online tools to identify brand colors and others that are compatible.</td>
+    
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Radio toggle button group">
+                                <input type="radio" class="btn-check" name="q12" id="q12-2" autocomplete="off" value="2">
+                                <label class="btn btn-outline-primary" for="q12-2">2</label>
+                              
+                                <input type="radio" class="btn-check" name="q12" id="q12-1" autocomplete="off" value="1">
+                                <label class="btn btn-outline-primary" for="q12-1">1</label>
+                              
+                                <input type="radio" class="btn-check" name="q12" id="q12-0" autocomplete="off" value="0">
+                                <label class="btn btn-outline-primary" for="q12-0">0</label>
+                              </div>
+                        </td>
+    
+                        <td>
+                            <input type="radio" class="btn-check ml-2" name="na12" id="q12-na" autocomplete="off" value="2">
+                            <label class="btn btn-outline-secondary" for="q12-na">N/A</label>
+                        </td>
+                      </tr>
+    
+                      <tr>
+                        <th scope="row">Color is used to highlight key patterns</th>
+                        <td>Action colors should guide the viewer to key parts of the display. Less important, supporting, or comparison
+                            data should be a muted color, like gray.</td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Radio toggle button group">
+                                <input type="radio" class="btn-check" name="q13" id="q13-2" autocomplete="off" value="2">
+                                <label class="btn btn-outline-primary" for="q13-2">2</label>
+                              
+                                <input type="radio" class="btn-check" name="q13" id="q13-1" autocomplete="off" value="1">
+                                <label class="btn btn-outline-primary" for="q13-1">1</label>
+                              
+                                <input type="radio" class="btn-check" name="q13" id="q13-0" autocomplete="off" value="0">
+                                <label class="btn btn-outline-primary" for="q13-0">0</label>
+                              </div>
+                        </td>
+                        <td>
+                            <input type="radio" class="btn-check ml-2" name="na13" id="q13-na" autocomplete="off" value="2">
+                            <label class="btn btn-outline-secondary" for="q13-na">N/A</label>
+                        </td>
+                      </tr>
+    
+                      <tr>
+                        <th scope="row">Color is legible when printed in black and white</th>
+                        <td>When printed or photocopied in black and white, the viewer should still be able to see patterns in the data.</td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Radio toggle button group">
+                                    <input type="radio" class="btn-check" name="q14" id="q14-2" autocomplete="off" value="2">
+                                    <label class="btn btn-outline-primary" for="q14-2">2</label>
+                                  
+                                    <input type="radio" class="btn-check" name="q14" id="q14-1" autocomplete="off" value="1">
+                                    <label class="btn btn-outline-primary" for="q14-1">1</label>
+                                  
+                                    <input type="radio" class="btn-check" name="q14" id="q14-0" autocomplete="off" value="0">
+                                    <label class="btn btn-outline-primary" for="q14-0">0</label>
+                                  </div>
+                            </td>
+        
+                            <td>
+                                <input type="radio" class="btn-check ml-2" name="na14" id="q14-na" autocomplete="off" value="2">
+                                <label class="btn btn-outline-secondary" for="q14-na">N/A</label>
+                            </td>
+                      </tr>
+    
+                      <tr>
+                        <th scope="row">Color is legible for people with colorblindness</th>
+                        <td>Avoid red-green and yellow-blue combinations when those colors touch one another. Avoid using red to mean
+                            bad and green to mean good in the same chart.</td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Radio toggle button group">
+                                    <input type="radio" class="btn-check" name="q15" id="q15-2" autocomplete="off" value="2">
+                                    <label class="btn btn-outline-primary" for="q15-2">2</label>
+                                  
+                                    <input type="radio" class="btn-check" name="q15" id="q15-1" autocomplete="off" value="1">
+                                    <label class="btn btn-outline-primary" for="q15-1">1</label>
+                                  
+                                    <input type="radio" class="btn-check" name="q15" id="q15-0" autocomplete="off" value="0">
+                                    <label class="btn btn-outline-primary" for="q15-0">0</label>
+                                  </div>
+                            </td>
+        
+                            <td>
+                                <input type="radio" class="btn-check ml-2" name="na15" id="q15-na" autocomplete="off" value="2">
+                                <label class="btn btn-outline-secondary" for="q15-na">N/A</label>
+                            </td>
+                      </tr>
+    
+                      <tr>
+                        <th scope="row">Text sufficiently contrasts background</th>
+                        <td>Black/very dark text against a white/transparent background is easiest to read.</td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Radio toggle button group">
+                                    <input type="radio" class="btn-check" name="q16" id="q16-2" autocomplete="off" value="2">
+                                    <label class="btn btn-outline-primary" for="q16-2">2</label>
+                                  
+                                    <input type="radio" class="btn-check" name="q16" id="q16-1" autocomplete="off" value="1">
+                                    <label class="btn btn-outline-primary" for="q16-1">1</label>
+                                  
+                                    <input type="radio" class="btn-check" name="q16" id="q16-0" autocomplete="off" value="0">
+                                    <label class="btn btn-outline-primary" for="q16-0">0</label>
+                                  </div>
+                            </td>
+        
+                            <td>
+                                <input type="radio" class="btn-check ml-2" name="na16" id="q16-na" autocomplete="off" value="2">
+                                <label class="btn btn-outline-secondary" for="q16-na">N/A</label>
+                            </td>
+                      </tr>
+    
+                    </tbody>
+                  </table>
+            </div>
+
+            <!--Lines-->
+            <div class="row my-5">
+                <h2>Lines</h2>
+                <p>Excessive lines - gridlines, borders, tick marks, and axes — can add clutter or noise to a graph, so eliminate them whenever they aren’t useful for interpreting the data.</p>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Guideline</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Rating</th>
+        
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">Gridlines, if present, are muted</th>
+                        <td>Color should be faint gray, not black. Full points if no gridlines are used. Gridlines, even muted, should not be
+                            used when the graph includes numeric labels on each data point.</td>
+    
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Radio toggle button group">
+                                <input type="radio" class="btn-check" name="q17" id="q17-2" autocomplete="off" value="2">
+                                <label class="btn btn-outline-primary" for="q17-2">2</label>
+                              
+                                <input type="radio" class="btn-check" name="q17" id="q17-1" autocomplete="off" value="1">
+                                <label class="btn btn-outline-primary" for="q17-1">1</label>
+                              
+                                <input type="radio" class="btn-check" name="q17" id="q17-0" autocomplete="off" value="0">
+                                <label class="btn btn-outline-primary" for="q17-0">0</label>
+                              </div>
+                        </td>
+    
+                        <td>
+                            <input type="radio" class="btn-check ml-2" name="na17" id="q17-na" autocomplete="off" value="2">
+                            <label class="btn btn-outline-secondary" for="q17-na">N/A</label>
+                        </td>
+                      </tr>
+    
+                      <tr>
+                        <th scope="row">Graph does not have border line</th>
+                        <td>Graph should bleed into the surrounding page or slide rather than being contained by a border.</td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Radio toggle button group">
+                                <input type="radio" class="btn-check" name="q18" id="q18-2" autocomplete="off" value="2">
+                                <label class="btn btn-outline-primary" for="q18-2">2</label>
+                              
+                                <input type="radio" class="btn-check" name="q18" id="q18-1" autocomplete="off" value="1">
+                                <label class="btn btn-outline-primary" for="q18-1">1</label>
+                              
+                                <input type="radio" class="btn-check" name="q18" id="q18-0" autocomplete="off" value="0">
+                                <label class="btn btn-outline-primary" for="q18-0">0</label>
+                              </div>
+                        </td>
+                        <td>
+                            <input type="radio" class="btn-check ml-2" name="na18" id="q18-na" autocomplete="off" value="2">
+                            <label class="btn btn-outline-secondary" for="q18-na">N/A</label>
+                        </td>
+                      </tr>
+    
+                      <tr>
+                        <th scope="row">Axes do not have unnecessary tick marks or axis lines</th>
+                        <td>Tick marks can be useful in line graphs (to demarcate each point in time along the y-axis) but are unnecessary
+                            in most other graph types. Remove axes lines whenever possible.</td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Radio toggle button group">
+                                    <input type="radio" class="btn-check" name="q19" id="q19-2" autocomplete="off" value="2">
+                                    <label class="btn btn-outline-primary" for="q19-2">2</label>
+                                
+                                    <input type="radio" class="btn-check" name="q19" id="q19-1" autocomplete="off" value="1">
+                                    <label class="btn btn-outline-primary" for="q19-1">1</label>
+                                  
+                                    <input type="radio" class="btn-check" name="q19" id="q19-0" autocomplete="off" value="0">
+                                    <label class="btn btn-outline-primary" for="q19-0">0</label>
+                                  </div>
+                            </td>
+        
+                            <td>
+                                <input type="radio" class="btn-check ml-2" name="na19" id="q19-na" autocomplete="off" value="2">
+                                <label class="btn btn-outline-secondary" for="q19-na">N/A</label>
+                            </td>
+                      </tr>
+    
+                      <tr>
+                        <th scope="row">Graph has one horizontal and one vertical axis</th>
+                        <td>Viewers can best interpret one x- and one y-axis. Don’t add a second y-axis. Try a connected scatter plot or two
+                            graphs, side by side, instead. (A secondary axis used to hack new graph types is ok, so long as viewers aren’t
+                            being asked to interpret a second y-axis.)</td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Radio toggle button group">
+                                    <input type="radio" class="btn-check" name="q20" id="q20-2" autocomplete="off" value="2">
+                                    <label class="btn btn-outline-primary" for="q20-2">2</label>
+                                  
+                                    <input type="radio" class="btn-check" name="q120" id="q20-1" autocomplete="off" value="1">
+                                    <label class="btn btn-outline-primary" for="q20-1">1</label>
+                                  
+                                    <input type="radio" class="btn-check" name="q20" id="q20-0" autocomplete="off" value="0">
+                                    <label class="btn btn-outline-primary" for="q20-0">0</label>
+                                  </div>
+                            </td>
+        
+                            <td>
+                                <input type="radio" class="btn-check ml-2" name="na20" id="q20-na" autocomplete="off" value="2">
+                                <label class="btn btn-outline-secondary" for="q20-na">N/A</label>
+                            </td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+
+            <!--Overall-->
+            <div class="row my-5">
+                <h2>Overall</h2>
+                <p>Graphs will catch a viewer’s attention so only visualize the data that needs attention. Too many graphics of unimportant information dilute the power of visualization.</p>
+                <table class="table">
+                    <thead>
+                        <tr>
+                        <th scope="col">Guideline</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Rating</th>
+        
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <th scope="row">Graph highlights significant finding or conclusion</th>
+                        <td>Graphs should have a "so what?" – either a practical or statistical significance (or both) to warrant their
+                            presence. For example, contextualized or comparison data help the viewer understand the significance of the
+                            data and give the graph more interpretive power.</td>
+    
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Radio toggle button group">
+                                <input type="radio" class="btn-check" name="q21" id="q21-2" autocomplete="off" value="2">
+                                <label class="btn btn-outline-primary" for="q21-2">2</label>
+                                
+                                <input type="radio" class="btn-check" name="q21" id="q21-1" autocomplete="off" value="1">
+                                <label class="btn btn-outline-primary" for="q21-1">1</label>
+                                
+                                <input type="radio" class="btn-check" name="q21" id="q21-0" autocomplete="off" value="0">
+                                <label class="btn btn-outline-primary" for="q21-0">0</label>
+                                </div>
+                        </td>
+    
+                        <td>
+                            <input type="radio" class="btn-check ml-2" name="na21" id="q21-na" autocomplete="off" value="2">
+                            <label class="btn btn-outline-secondary" for="q21-na">N/A</label>
+                        </td>
+                        </tr>
+    
+                        <tr>
+                        <th scope="row">The type of graph is appropriate for data</th>
+                        <td>Data are displayed using a graph type appropriate for the relationship within the data. For example, change
+                            over time is displayed as a line graph, area chart, slope graph, or dot plot.</td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Radio toggle button group">
+                                    <input type="radio" class="btn-check" name="q22" id="q22-2" autocomplete="off" value="2">
+                                    <label class="btn btn-outline-primary" for="q22-2">2</label>
+                                    
+                                    <input type="radio" class="btn-check" name="q22" id="q22-1" autocomplete="off" value="1">
+                                    <label class="btn btn-outline-primary" for="q22-1">1</label>
+                                    
+                                    <input type="radio" class="btn-check" name="q22" id="q22-0" autocomplete="off" value="0">
+                                    <label class="btn btn-outline-primary" for="q22-0">0</label>
+                                    </div>
+                            </td>
+        
+                            <td>
+                                <input type="radio" class="btn-check ml-2" name="na22" id="q22-na" autocomplete="off" value="2">
+                                <label class="btn btn-outline-secondary" for="q22-na">N/A</label>
+                            </td>
+                        </tr>
+    
+                        <tr>
+                        <th scope="row">Graph has appropriate level of precision</th>
+                        <td>Use a level of precision that meets your audiences’ needs. Few numeric labels need decimal places, unless you
+                            are speaking with academic peers. Charts intended for public consumption rarely need p values listed.</td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Radio toggle button group">
+                                    <input type="radio" class="btn-check" name="q23" id="q23-2" autocomplete="off" value="2">
+                                    <label class="btn btn-outline-primary" for="q23-2">2</label>
+                                    
+                                    <input type="radio" class="btn-check" name="q23" id="q23-1" autocomplete="off" value="1">
+                                    <label class="btn btn-outline-primary" for="q23-1">1</label>
+                                    
+                                    <input type="radio" class="btn-check" name="q23" id="q23-0" autocomplete="off" value="0">
+                                    <label class="btn btn-outline-primary" for="q23-0">0</label>
+                                    </div>
+                            </td>
+        
+                            <td>
+                                <input type="radio" class="btn-check ml-2" name="na23" id="q23-na" autocomplete="off" value="2">
+                                <label class="btn btn-outline-secondary" for="q23-na">N/A</label>
+                            </td>
+                        </tr>
+    
+                        <tr>
+                        <th scope="row">Individual chart elements work together to reinforce the overarching takeaway message</th>
+                        <td>Choices about graph type, text, arrangement, color, and lines should reinforce the same takeaway message.</td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Radio toggle button group">
+                                <input type="radio" class="btn-check" name="q24" id="q24-2" autocomplete="off" value="2">
+                                <label class="btn btn-outline-primary" for="q24-2">2</label>
+                                
+                                <input type="radio" class="btn-check" name="q24" id="q24-1" autocomplete="off" value="1">
+                                <label class="btn btn-outline-primary" for="q24-1">1</label>
+                                
+                                <input type="radio" class="btn-check" name="q24" id="q24-0" autocomplete="off" value="0">
+                                <label class="btn btn-outline-primary" for="q24-0">0</label>
+                                </div>
+                        </td>
+    
+                        <td>
+                            <input type="radio" class="btn-check ml-2" name="na24" id="q24-na" autocomplete="off" value="2">
+                            <label class="btn btn-outline-secondary" for="q24-na">N/A</label>
+                        </td>
+                        </tr>
+                    </tbody>
+                    </table>
+            </div>
+
+
+
+
+
+              <div class="row my-5">
+                  <div class="col-md-4 d-grid gap-1">
+                    <button onclick="test()" class="btn btn-primary my-2">Score me</button>
+                    <button onclick="reset()" class="btn btn-outline-secondary my-2">Reset form</button>
+                  </div>
+                  <div class="col-md-8" id="showMe">
+                    <div class="larger">
+                        <p>Score: 
+                            <span id="yourScore"  class="badge bg-primary">your score</span> out of <span id="outOf" class="badge bg-primary">available points</span>: <span id="pct" class="badge bg-primary">%</span></p>
+                    </div>
+                    <p>Well-formatted data visualizations score between 90-100% of available points. At this level, viewers are better able to read, interpret, and retain content.</p>
+                  </div>
+              </div>
+
+
+
+        </div>
+
+        <script>
+            // initial variables.
+            var n_questions = 24;    // revise this with the number of questions
+            var possibleMax = 2 * n_questions; // this is the possible maximum score.
+
+            // runs on button click
+            function test() {
+                // First set loops through score buttons, adding values to score
+                var score = 0;
+                for (var i = 1; i <= n_questions; i++) {
+                    var answers = document.getElementsByName('q' + i);
+                    for (var j = 0; j < answers.length; j++) {
+                        if (answers[j].checked) {
+                            score += +answers[j].value;
+                            break;
+                        }
+                    }
+                }
+
+                // second set loops through NA buttons, removing their value from the possible max score. 
+                var na = 0 
+                for (var i = 1; i<= n_questions; i++) {
+                    var noAnswers = document.getElementsByName('na' + i);
+                    for (var k = 0; k < noAnswers.length; k++) {
+                    if (noAnswers[k].checked) {
+                        na += +noAnswers[k].value;
+                        break;
+                        }
+                    }
+                }
+
+                possibleMax = possibleMax - na
+
+                // print your score and the possible max to the Results table.
+                document.getElementById('showMe').style.display = "block";
+                document.getElementById('yourScore').innerHTML = score + " points";
+                document.getElementById('outOf').innerHTML = possibleMax + " points";
+                document.getElementById('pct').innerHTML = 100 * score/possibleMax + " %";
+                window.scrollTo(0,document.body.scrollHeight);
+
+            }
+
+            // Code for looping/scoring gratefully used from http://jsfiddle.net/C37Vh/
+
+            function reset() {
+                location.reload()
+            }
+
+        </script>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--Bootstrap JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+
+</html>
