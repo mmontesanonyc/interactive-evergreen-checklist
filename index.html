@@ -831,21 +831,30 @@
 
 
               <div class="row my-5">
-                  <div class="col-md-4 d-grid gap-1">
+                  <div class="col-md-1"></div>
+                  <div class="col-md-3 d-grid gap-1">
                     <button onclick="test()" class="btn btn-primary my-2">Score me</button>
                     <button onclick="reset()" class="btn btn-outline-secondary my-2">Reset form</button>
                   </div>
-                  <div class="col-md-8" id="showMe">
+                  <div class="col-md-7" id="showMe">
                     <div class="larger">
                         <p>Score: 
                             <span id="yourScore"  class="badge bg-primary">your score</span> out of <span id="outOf" class="badge bg-primary">available points</span>: <span id="pct" class="badge bg-primary">%</span></p>
                     </div>
                     <p>Well-formatted data visualizations score between 90-100% of available points. At this level, viewers are better able to read, interpret, and retain content.</p>
                   </div>
+                  <div class="col-md-1"></div>
+
               </div>
 
 
 
+        </div>
+
+        <div class="narrow">
+            <div class="aboutbox p-3 my-4">
+                <p><a href="https://github.com/mmontesanonyc/interactive-evergreen-checklist">View this tool's repository and source code here</a>.</p>
+            </div>
         </div>
 
         <script>
@@ -868,8 +877,9 @@
                 }
 
 
-
+                // subtract the NAs from the possibleMax score
                 possibleMax = possibleMax - naCount;
+                // note that we add the VALUE of each NA (2) to naCount, so no need to double it.
 
                 // print your score and the possible max to the Results table.
                 document.getElementById('showMe').style.display = "block";
@@ -883,6 +893,7 @@
 
             // Code for looping/scoring gratefully used from http://jsfiddle.net/C37Vh/
 
+            // Reset the page by just reloading.
             function reset() {
                 location.reload()
             }
