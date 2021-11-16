@@ -89,7 +89,9 @@
                       <tr>
                         <th scope="col">Guideline</th>
                         <th scope="col">Description</th>
-                        <th scope="col">Rating</th>
+                        <th scope="col">Rating
+                        </th>
+                        <th scope="col">N/A</th>
         
                       </tr>
                     </thead>
@@ -98,8 +100,7 @@
                         <th scope="row">6-12 word descriptive title is left-justified in upper left corner</th>
                         <td>Short titles enable readers to comprehend takeaway messages even while quickly skimming the graph. Rather
                             than a generic phrase, use a descriptive sentence that encapsulates the graph’s finding or “so what?” Western
-                            cultures start reading in the upper left, so locate the title there.</td>
-    
+                            cultures start reading in the upper left, so locate the title there.</td>    
                         <td>
                             <div class="btn-group" role="group" aria-label="Radio toggle button group">
                                 <input type="radio" class="btn-check" name="q1" id="q1-2" autocomplete="off" value="2">
@@ -112,12 +113,37 @@
                                 <label class="btn btn-outline-primary" for="q1-0">0</label>
                               </div>
                         </td>
-    
+
                         <td>
-                            <input type="radio" class="btn-check ml-2" name="na1" id="q1-na" autocomplete="off" value="2">
-                            <label class="btn btn-outline-secondary" for="q1-na">N/A</label>
+                            <div class="form-check form-switch">
+                                <label class="form-check-label" for="na1">
+                                <input class="form-check-input" type="checkbox" value="2" id="na1" onchange="notApplicable(1)">
+                                </label>
+                              </div>
                         </td>
                       </tr>
+
+                      <script>
+                        var naCount = 0;
+
+                        function notApplicable(x) {
+                            if (document.getElementById('na'+x).checked) {
+                                console.log("question " + x + " is not applicable");
+                                document.getElementById('q'+x+'-2').disabled=true
+                                document.getElementById('q'+x+'-1').disabled=true
+                                document.getElementById('q'+x+'-0').disabled=true
+                                naCount = naCount + 2;
+                            } else {
+                                document.getElementById('q'+x+'-2').disabled=false
+                                document.getElementById('q'+x+'-1').disabled=false
+                                document.getElementById('q'+x+'-0').disabled=false
+                                naCount = naCount - 2;
+                            }
+
+                            console.log(naCount)
+                        }
+
+                      </script>
     
                       <tr>
                         <th scope="row">Subtitle and/or annotations provide additional information</th>
@@ -136,8 +162,11 @@
                               </div>
                         </td>
                         <td>
-                            <input type="radio" class="btn-check ml-2" name="na2" id="q2-na" autocomplete="off" value="2">
-                            <label class="btn btn-outline-secondary" for="q2-na">N/A</label>
+                            <div class="form-check form-switch">
+                                <label class="form-check-label" for="na2">
+                                <input class="form-check-input" type="checkbox" value="2" id="na2" onchange="notApplicable(2)">
+                                </label>
+                              </div>
                         </td>
                       </tr>
     
@@ -160,8 +189,11 @@
                             </td>
         
                             <td>
-                                <input type="radio" class="btn-check ml-2" name="na3" id="q3-na" autocomplete="off" value="2">
-                                <label class="btn btn-outline-secondary" for="q3-na">N/A</label>
+                                <div class="form-check form-switch">
+                                    <label class="form-check-label" for="na3">
+                                    <input class="form-check-input" type="checkbox" value="2" id="na3" onchange="notApplicable(3)">
+                                    </label>
+                                  </div>
                             </td>
                       </tr>
     
@@ -184,8 +216,11 @@
                             </td>
         
                             <td>
-                                <input type="radio" class="btn-check ml-2" name="na4" id="q4-na" autocomplete="off" value="2">
-                                <label class="btn btn-outline-secondary" for="q4-na">N/A</label>
+                                <div class="form-check form-switch">
+                                    <label class="form-check-label" for="na4">
+                                    <input class="form-check-input" type="checkbox" value="2" id="na4" onchange="notApplicable(4)">
+                                    </label>
+                                  </div>
                             </td>
                       </tr>
     
@@ -208,8 +243,11 @@
                             </td>
         
                             <td>
-                                <input type="radio" class="btn-check ml-2" name="na5" id="q5-na" autocomplete="off" value="2">
-                                <label class="btn btn-outline-secondary" for="q5-na">N/A</label>
+                                <div class="form-check form-switch">
+                                    <label class="form-check-label" for="na5">
+                                    <input class="form-check-input" type="checkbox" value="2" id="na5" onchange="notApplicable(5)">
+                                    </label>
+                                  </div>
                             </td>
                       </tr>
     
@@ -231,8 +269,11 @@
                             </td>
         
                             <td>
-                                <input type="radio" class="btn-check ml-2" name="na6" id="q6-na" autocomplete="off" value="2">
-                                <label class="btn btn-outline-secondary" for="q6-na">N/A</label>
+                                <div class="form-check form-switch">
+                                    <label class="form-check-label" for="na6">
+                                    <input class="form-check-input" type="checkbox" value="2" id="na6" onchange="notApplicable(6)">
+                                    </label>
+                                  </div>
                             </td>
                       </tr>
         
@@ -249,7 +290,9 @@
                       <tr>
                         <th scope="col">Guideline</th>
                         <th scope="col">Description</th>
-                        <th scope="col">Rating</th>
+                        <th scope="col">Rating
+                        </th>
+                        <th scope="col">N/A</th>
         
                       </tr>
                     </thead>
@@ -275,8 +318,11 @@
                         </td>
     
                         <td>
-                            <input type="radio" class="btn-check ml-2" name="na7" id="q7-na" autocomplete="off" value="2">
-                            <label class="btn btn-outline-secondary" for="q7-na">N/A</label>
+                            <div class="form-check form-switch">
+                                <label class="form-check-label" for="na7">
+                                <input class="form-check-input" type="checkbox" value="2" id="na7" onchange="notApplicable(7)">
+                                </label>
+                              </div>
                         </td>
                       </tr>
     
@@ -298,8 +344,11 @@
                               </div>
                         </td>
                         <td>
-                            <input type="radio" class="btn-check ml-2" name="na8" id="q8-na" autocomplete="off" value="2">
-                            <label class="btn btn-outline-secondary" for="q8-na">N/A</label>
+                            <div class="form-check form-switch">
+                                <label class="form-check-label" for="na8">
+                                <input class="form-check-input" type="checkbox" value="2" id="na8" onchange="notApplicable(8)">
+                                </label>
+                              </div>
                         </td>
                       </tr>
     
@@ -321,8 +370,11 @@
                             </td>
         
                             <td>
-                                <input type="radio" class="btn-check ml-2" name="na9" id="q9-na" autocomplete="off" value="2">
-                                <label class="btn btn-outline-secondary" for="q9-na">N/A</label>
+                                <div class="form-check form-switch">
+                                    <label class="form-check-label" for="na9">
+                                    <input class="form-check-input" type="checkbox" value="2" id="na9" onchange="notApplicable(9)">
+                                    </label>
+                                  </div>
                             </td>
                       </tr>
     
@@ -343,8 +395,11 @@
                             </td>
         
                             <td>
-                                <input type="radio" class="btn-check ml-2" name="na10" id="q10-na" autocomplete="off" value="2">
-                                <label class="btn btn-outline-secondary" for="q10-na">N/A</label>
+                                <div class="form-check form-switch">
+                                    <label class="form-check-label" for="na10">
+                                    <input class="form-check-input" type="checkbox" value="2" id="na10" onchange="notApplicable(10)">
+                                    </label>
+                                  </div>
                             </td>
                       </tr>
     
@@ -366,8 +421,11 @@
                             </td>
         
                             <td>
-                                <input type="radio" class="btn-check ml-2" name="na11" id="q11-na" autocomplete="off" value="2">
-                                <label class="btn btn-outline-secondary" for="q11-na">N/A</label>
+                                <div class="form-check form-switch">
+                                    <label class="form-check-label" for="na11">
+                                    <input class="form-check-input" type="checkbox" value="2" id="na11" onchange="notApplicable(11)">
+                                    </label>
+                                  </div>
                             </td>
                       </tr>
     
@@ -384,7 +442,9 @@
                       <tr>
                         <th scope="col">Guideline</th>
                         <th scope="col">Description</th>
-                        <th scope="col">Rating</th>
+                        <th scope="col">Rating
+                        </th>
+                        <th scope="col">N/A</th>
         
                       </tr>
                     </thead>
@@ -408,8 +468,11 @@
                         </td>
     
                         <td>
-                            <input type="radio" class="btn-check ml-2" name="na12" id="q12-na" autocomplete="off" value="2">
-                            <label class="btn btn-outline-secondary" for="q12-na">N/A</label>
+                            <div class="form-check form-switch">
+                                <label class="form-check-label" for="na12">
+                                <input class="form-check-input" type="checkbox" value="2" id="na12" onchange="notApplicable(12)">
+                                </label>
+                              </div>
                         </td>
                       </tr>
     
@@ -430,8 +493,11 @@
                               </div>
                         </td>
                         <td>
-                            <input type="radio" class="btn-check ml-2" name="na13" id="q13-na" autocomplete="off" value="2">
-                            <label class="btn btn-outline-secondary" for="q13-na">N/A</label>
+                            <div class="form-check form-switch">
+                                <label class="form-check-label" for="na13">
+                                <input class="form-check-input" type="checkbox" value="2" id="na13" onchange="notApplicable(13)">
+                                </label>
+                              </div>
                         </td>
                       </tr>
     
@@ -452,8 +518,11 @@
                             </td>
         
                             <td>
-                                <input type="radio" class="btn-check ml-2" name="na14" id="q14-na" autocomplete="off" value="2">
-                                <label class="btn btn-outline-secondary" for="q14-na">N/A</label>
+                                <div class="form-check form-switch">
+                                    <label class="form-check-label" for="na14">
+                                    <input class="form-check-input" type="checkbox" value="2" id="na14" onchange="notApplicable(14)">
+                                    </label>
+                                  </div>
                             </td>
                       </tr>
     
@@ -475,8 +544,11 @@
                             </td>
         
                             <td>
-                                <input type="radio" class="btn-check ml-2" name="na15" id="q15-na" autocomplete="off" value="2">
-                                <label class="btn btn-outline-secondary" for="q15-na">N/A</label>
+                                <div class="form-check form-switch">
+                                    <label class="form-check-label" for="na15">
+                                    <input class="form-check-input" type="checkbox" value="2" id="na15" onchange="notApplicable(15)">
+                                    </label>
+                                  </div>
                             </td>
                       </tr>
     
@@ -497,8 +569,11 @@
                             </td>
         
                             <td>
-                                <input type="radio" class="btn-check ml-2" name="na16" id="q16-na" autocomplete="off" value="2">
-                                <label class="btn btn-outline-secondary" for="q16-na">N/A</label>
+                                <div class="form-check form-switch">
+                                    <label class="form-check-label" for="na16">
+                                    <input class="form-check-input" type="checkbox" value="2" id="na16" onchange="notApplicable(16)">
+                                    </label>
+                                  </div>
                             </td>
                       </tr>
     
@@ -515,7 +590,9 @@
                       <tr>
                         <th scope="col">Guideline</th>
                         <th scope="col">Description</th>
-                        <th scope="col">Rating</th>
+                        <th scope="col">Rating
+                        </th>
+                        <th scope="col">N/A</th>
         
                       </tr>
                     </thead>
@@ -539,8 +616,11 @@
                         </td>
     
                         <td>
-                            <input type="radio" class="btn-check ml-2" name="na17" id="q17-na" autocomplete="off" value="2">
-                            <label class="btn btn-outline-secondary" for="q17-na">N/A</label>
+                            <div class="form-check form-switch">
+                                <label class="form-check-label" for="na17">
+                                <input class="form-check-input" type="checkbox" value="2" id="na17" onchange="notApplicable(17)">
+                                </label>
+                              </div>
                         </td>
                       </tr>
     
@@ -560,8 +640,11 @@
                               </div>
                         </td>
                         <td>
-                            <input type="radio" class="btn-check ml-2" name="na18" id="q18-na" autocomplete="off" value="2">
-                            <label class="btn btn-outline-secondary" for="q18-na">N/A</label>
+                            <div class="form-check form-switch">
+                                <label class="form-check-label" for="na18">
+                                <input class="form-check-input" type="checkbox" value="2" id="na18" onchange="notApplicable(18)">
+                                </label>
+                              </div>
                         </td>
                       </tr>
     
@@ -583,8 +666,11 @@
                             </td>
         
                             <td>
-                                <input type="radio" class="btn-check ml-2" name="na19" id="q19-na" autocomplete="off" value="2">
-                                <label class="btn btn-outline-secondary" for="q19-na">N/A</label>
+                                <div class="form-check form-switch">
+                                    <label class="form-check-label" for="na19">
+                                    <input class="form-check-input" type="checkbox" value="2" id="na19" onchange="notApplicable(19)">
+                                    </label>
+                                  </div>
                             </td>
                       </tr>
     
@@ -607,8 +693,11 @@
                             </td>
         
                             <td>
-                                <input type="radio" class="btn-check ml-2" name="na20" id="q20-na" autocomplete="off" value="2">
-                                <label class="btn btn-outline-secondary" for="q20-na">N/A</label>
+                                <div class="form-check form-switch">
+                                    <label class="form-check-label" for="na20">
+                                    <input class="form-check-input" type="checkbox" value="2" id="na20" onchange="notApplicable(20)">
+                                    </label>
+                                  </div>
                             </td>
                       </tr>
                     </tbody>
@@ -622,9 +711,11 @@
                 <table class="table">
                     <thead>
                         <tr>
-                        <th scope="col">Guideline</th>
-                        <th scope="col">Description</th>
-                        <th scope="col">Rating</th>
+                            <th scope="col">Guideline</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Rating
+                            </th>
+                            <th scope="col">N/A</th>
         
                         </tr>
                     </thead>
@@ -649,8 +740,11 @@
                         </td>
     
                         <td>
-                            <input type="radio" class="btn-check ml-2" name="na21" id="q21-na" autocomplete="off" value="2">
-                            <label class="btn btn-outline-secondary" for="q21-na">N/A</label>
+                            <div class="form-check form-switch">
+                                <label class="form-check-label" for="na21">
+                                <input class="form-check-input" type="checkbox" value="2" id="na21" onchange="notApplicable(21)">
+                                </label>
+                              </div>
                         </td>
                         </tr>
     
@@ -672,8 +766,11 @@
                             </td>
         
                             <td>
-                                <input type="radio" class="btn-check ml-2" name="na22" id="q22-na" autocomplete="off" value="2">
-                                <label class="btn btn-outline-secondary" for="q22-na">N/A</label>
+                                <div class="form-check form-switch">
+                                    <label class="form-check-label" for="na22">
+                                    <input class="form-check-input" type="checkbox" value="2" id="na22" onchange="notApplicable(22)">
+                                    </label>
+                                  </div>
                             </td>
                         </tr>
     
@@ -695,8 +792,11 @@
                             </td>
         
                             <td>
-                                <input type="radio" class="btn-check ml-2" name="na23" id="q23-na" autocomplete="off" value="2">
-                                <label class="btn btn-outline-secondary" for="q23-na">N/A</label>
+                                <div class="form-check form-switch">
+                                    <label class="form-check-label" for="na23">
+                                    <input class="form-check-input" type="checkbox" value="2" id="na23" onchange="notApplicable(23)">
+                                    </label>
+                                  </div>
                             </td>
                         </tr>
     
@@ -717,8 +817,11 @@
                         </td>
     
                         <td>
-                            <input type="radio" class="btn-check ml-2" name="na24" id="q24-na" autocomplete="off" value="2">
-                            <label class="btn btn-outline-secondary" for="q24-na">N/A</label>
+                            <div class="form-check form-switch">
+                                <label class="form-check-label" for="na24">
+                                <input class="form-check-input" type="checkbox" value="2" id="na24" onchange="notApplicable(24)">
+                                </label>
+                              </div>
                         </td>
                         </tr>
                     </tbody>
@@ -766,25 +869,16 @@
                     }
                 }
 
-                // second set loops through NA buttons, removing their value from the possible max score. 
-                var na = 0 
-                for (var i = 1; i<= n_questions; i++) {
-                    var noAnswers = document.getElementsByName('na' + i);
-                    for (var k = 0; k < noAnswers.length; k++) {
-                    if (noAnswers[k].checked) {
-                        na += +noAnswers[k].value;
-                        break;
-                        }
-                    }
-                }
 
-                possibleMax = possibleMax - na
+
+                possibleMax = possibleMax - naCount;
 
                 // print your score and the possible max to the Results table.
                 document.getElementById('showMe').style.display = "block";
                 document.getElementById('yourScore').innerHTML = score + " points";
                 document.getElementById('outOf').innerHTML = possibleMax + " points";
-                document.getElementById('pct').innerHTML = 100 * score/possibleMax + " %";
+                var yourPercent = (100 * score/possibleMax).toFixed(1)
+                document.getElementById('pct').innerHTML = yourPercent + " %";
                 window.scrollTo(0,document.body.scrollHeight);
 
             }
