@@ -84,10 +84,10 @@
     chart has no axes lines
     or tick marks to rate. If the guideline has been broken intentionally to make a point, rate it n/a and deduct those
     points from the total possible.
-    Refer to the Data Visualization Anatomy Chart on the last page for guidance on vocabulary and the Resources at the
-    end for more details.</p>
+    <a href="https://stephanieevergreen.com/wp-content/uploads/2020/12/EvergreenDataVizChecklist.pdf">Refer to the Data Visualization Anatomy Chart on the last page for guidance on vocabulary and the Resources at the
+    end for more details</a>.</p>
     <div class="aboutbox p-3 my-4">
-      Note: toggle the toggle switch in the right-hand column to mark a question N/A (not applicable) and disable the
+      Note: toggle the switch in the right-hand column to mark a question N/A (not applicable) and disable the
       scoring for that question.
     </div>
   </div>
@@ -105,7 +105,7 @@
             <th scope="col">Description</th>
             <th scope="col">Rating
             </th>
-            <th scope="col">N/A</th>
+            <th scope="col">Applies?</th>
 
           </tr>
         </thead>
@@ -133,33 +133,13 @@
             <td>
               <div class="form-check form-switch">
                 <label class="form-check-label" for="na1">
-                  <input class="form-check-input" type="checkbox" value="2" id="na1" onchange="notApplicable(1)">
+                  <input class="form-check-input" type="checkbox" value="2" id="na1" onchange="notApplicable(1)" checked>
                 </label>
               </div>
             </td>
           </tr>
 
-          <script>
-            var naCount = 0;
 
-            function notApplicable(x) {
-              if (document.getElementById('na' + x).checked) {
-                console.log("question " + x + " is not applicable");
-                document.getElementById('q' + x + '-2').disabled = true
-                document.getElementById('q' + x + '-1').disabled = true
-                document.getElementById('q' + x + '-0').disabled = true
-                naCount = naCount + 2;
-              } else {
-                document.getElementById('q' + x + '-2').disabled = false
-                document.getElementById('q' + x + '-1').disabled = false
-                document.getElementById('q' + x + '-0').disabled = false
-                naCount = naCount - 2;
-              }
-
-              console.log(naCount)
-            }
-
-          </script>
 
           <tr>
             <th scope="row">Subtitle and/or annotations provide additional information</th>
@@ -181,7 +161,7 @@
             <td>
               <div class="form-check form-switch">
                 <label class="form-check-label" for="na2">
-                  <input class="form-check-input" type="checkbox" value="2" id="na2" onchange="notApplicable(2)">
+                  <input class="form-check-input" type="checkbox" value="2" id="na2" onchange="notApplicable(2)" checked>
                 </label>
               </div>
             </td>
@@ -210,7 +190,7 @@
             <td>
               <div class="form-check form-switch">
                 <label class="form-check-label" for="na3">
-                  <input class="form-check-input" type="checkbox" value="2" id="na3" onchange="notApplicable(3)">
+                  <input class="form-check-input" type="checkbox" value="2" id="na3" onchange="notApplicable(3)" checked>
                 </label>
               </div>
             </td>
@@ -239,7 +219,7 @@
             <td>
               <div class="form-check form-switch">
                 <label class="form-check-label" for="na4">
-                  <input class="form-check-input" type="checkbox" value="2" id="na4" onchange="notApplicable(4)">
+                  <input class="form-check-input" type="checkbox" value="2" id="na4" onchange="notApplicable(4)" checked>
                 </label>
               </div>
             </td>
@@ -267,7 +247,7 @@
             <td>
               <div class="form-check form-switch">
                 <label class="form-check-label" for="na5">
-                  <input class="form-check-input" type="checkbox" value="2" id="na5" onchange="notApplicable(5)">
+                  <input class="form-check-input" type="checkbox" value="2" id="na5" onchange="notApplicable(5)" checked>
                 </label>
               </div>
             </td>
@@ -294,7 +274,7 @@
             <td>
               <div class="form-check form-switch">
                 <label class="form-check-label" for="na6">
-                  <input class="form-check-input" type="checkbox" value="2" id="na6" onchange="notApplicable(6)">
+                  <input class="form-check-input" type="checkbox" value="2" id="na6" onchange="notApplicable(6)" checked>
                 </label>
               </div>
             </td>
@@ -316,7 +296,7 @@
             <th scope="col">Description</th>
             <th scope="col">Rating
             </th>
-            <th scope="col">N/A</th>
+            <th scope="col">Applies?</th>
 
           </tr>
         </thead>
@@ -346,7 +326,7 @@
             <td>
               <div class="form-check form-switch">
                 <label class="form-check-label" for="na7">
-                  <input class="form-check-input" type="checkbox" value="2" id="na7" onchange="notApplicable(7)">
+                  <input class="form-check-input" type="checkbox" value="2" id="na7" onchange="notApplicable(7)" checked>
                 </label>
               </div>
             </td>
@@ -375,7 +355,7 @@
             <td>
               <div class="form-check form-switch">
                 <label class="form-check-label" for="na8">
-                  <input class="form-check-input" type="checkbox" value="2" id="na8" onchange="notApplicable(8)">
+                  <input class="form-check-input" type="checkbox" value="2" id="na8" onchange="notApplicable(8)" checked>
                 </label>
               </div>
             </td>
@@ -402,7 +382,7 @@
             <td>
               <div class="form-check form-switch">
                 <label class="form-check-label" for="na9">
-                  <input class="form-check-input" type="checkbox" value="2" id="na9" onchange="notApplicable(9)">
+                  <input class="form-check-input" type="checkbox" value="2" id="na9" onchange="notApplicable(9)" checked>
                 </label>
               </div>
             </td>
@@ -427,7 +407,7 @@
             <td>
               <div class="form-check form-switch">
                 <label class="form-check-label" for="na10">
-                  <input class="form-check-input" type="checkbox" value="2" id="na10" onchange="notApplicable(10)">
+                  <input class="form-check-input" type="checkbox" value="2" id="na10" onchange="notApplicable(10)" checked>
                 </label>
               </div>
             </td>
@@ -454,7 +434,7 @@
             <td>
               <div class="form-check form-switch">
                 <label class="form-check-label" for="na11">
-                  <input class="form-check-input" type="checkbox" value="2" id="na11" onchange="notApplicable(11)">
+                  <input class="form-check-input" type="checkbox" value="2" id="na11" onchange="notApplicable(11)" checked>
                 </label>
               </div>
             </td>
@@ -476,7 +456,7 @@
             <th scope="col">Description</th>
             <th scope="col">Rating
             </th>
-            <th scope="col">N/A</th>
+            <th scope="col">Applies?</th>
 
           </tr>
         </thead>
@@ -504,7 +484,7 @@
             <td>
               <div class="form-check form-switch">
                 <label class="form-check-label" for="na12">
-                  <input class="form-check-input" type="checkbox" value="2" id="na12" onchange="notApplicable(12)">
+                  <input class="form-check-input" type="checkbox" value="2" id="na12" onchange="notApplicable(12)" checked>
                 </label>
               </div>
             </td>
@@ -530,7 +510,7 @@
             <td>
               <div class="form-check form-switch">
                 <label class="form-check-label" for="na13">
-                  <input class="form-check-input" type="checkbox" value="2" id="na13" onchange="notApplicable(13)">
+                  <input class="form-check-input" type="checkbox" value="2" id="na13" onchange="notApplicable(13)" checked>
                 </label>
               </div>
             </td>
@@ -556,7 +536,7 @@
             <td>
               <div class="form-check form-switch">
                 <label class="form-check-label" for="na14">
-                  <input class="form-check-input" type="checkbox" value="2" id="na14" onchange="notApplicable(14)">
+                  <input class="form-check-input" type="checkbox" value="2" id="na14" onchange="notApplicable(14)" checked>
                 </label>
               </div>
             </td>
@@ -583,7 +563,7 @@
             <td>
               <div class="form-check form-switch">
                 <label class="form-check-label" for="na15">
-                  <input class="form-check-input" type="checkbox" value="2" id="na15" onchange="notApplicable(15)">
+                  <input class="form-check-input" type="checkbox" value="2" id="na15" onchange="notApplicable(15)" checked>
                 </label>
               </div>
             </td>
@@ -608,7 +588,7 @@
             <td>
               <div class="form-check form-switch">
                 <label class="form-check-label" for="na16">
-                  <input class="form-check-input" type="checkbox" value="2" id="na16" onchange="notApplicable(16)">
+                  <input class="form-check-input" type="checkbox" value="2" id="na16" onchange="notApplicable(16)" checked>
                 </label>
               </div>
             </td>
@@ -630,7 +610,7 @@
             <th scope="col">Description</th>
             <th scope="col">Rating
             </th>
-            <th scope="col">N/A</th>
+            <th scope="col">Applies?</th>
 
           </tr>
         </thead>
@@ -657,7 +637,7 @@
             <td>
               <div class="form-check form-switch">
                 <label class="form-check-label" for="na17">
-                  <input class="form-check-input" type="checkbox" value="2" id="na17" onchange="notApplicable(17)">
+                  <input class="form-check-input" type="checkbox" value="2" id="na17" onchange="notApplicable(17)" checked>
                 </label>
               </div>
             </td>
@@ -681,7 +661,7 @@
             <td>
               <div class="form-check form-switch">
                 <label class="form-check-label" for="na18">
-                  <input class="form-check-input" type="checkbox" value="2" id="na18" onchange="notApplicable(18)">
+                  <input class="form-check-input" type="checkbox" value="2" id="na18" onchange="notApplicable(18)" checked>
                 </label>
               </div>
             </td>
@@ -708,7 +688,7 @@
             <td>
               <div class="form-check form-switch">
                 <label class="form-check-label" for="na19">
-                  <input class="form-check-input" type="checkbox" value="2" id="na19" onchange="notApplicable(19)">
+                  <input class="form-check-input" type="checkbox" value="2" id="na19" onchange="notApplicable(19)" checked>
                 </label>
               </div>
             </td>
@@ -737,7 +717,7 @@
             <td>
               <div class="form-check form-switch">
                 <label class="form-check-label" for="na20">
-                  <input class="form-check-input" type="checkbox" value="2" id="na20" onchange="notApplicable(20)">
+                  <input class="form-check-input" type="checkbox" value="2" id="na20" onchange="notApplicable(20)" checked>
                 </label>
               </div>
             </td>
@@ -758,7 +738,7 @@
             <th scope="col">Description</th>
             <th scope="col">Rating
             </th>
-            <th scope="col">N/A</th>
+            <th scope="col">Applies?</th>
 
           </tr>
         </thead>
@@ -787,7 +767,7 @@
             <td>
               <div class="form-check form-switch">
                 <label class="form-check-label" for="na21">
-                  <input class="form-check-input" type="checkbox" value="2" id="na21" onchange="notApplicable(21)">
+                  <input class="form-check-input" type="checkbox" value="2" id="na21" onchange="notApplicable(21)" checked>
                 </label>
               </div>
             </td>
@@ -814,7 +794,7 @@
             <td>
               <div class="form-check form-switch">
                 <label class="form-check-label" for="na22">
-                  <input class="form-check-input" type="checkbox" value="2" id="na22" onchange="notApplicable(22)">
+                  <input class="form-check-input" type="checkbox" value="2" id="na22" onchange="notApplicable(22)" checked>
                 </label>
               </div>
             </td>
@@ -841,7 +821,7 @@
             <td>
               <div class="form-check form-switch">
                 <label class="form-check-label" for="na23">
-                  <input class="form-check-input" type="checkbox" value="2" id="na23" onchange="notApplicable(23)">
+                  <input class="form-check-input" type="checkbox" value="2" id="na23" onchange="notApplicable(23)" checked>
                 </label>
               </div>
             </td>
@@ -867,7 +847,7 @@
             <td>
               <div class="form-check form-switch">
                 <label class="form-check-label" for="na24">
-                  <input class="form-check-input" type="checkbox" value="2" id="na24" onchange="notApplicable(24)">
+                  <input class="form-check-input" type="checkbox" value="2" id="na24" onchange="notApplicable(24)" checked>
                 </label>
               </div>
             </td>
@@ -913,10 +893,31 @@
 
   <script>
     // initial variables.
+    var naCount = 0;
     var n_questions = 24;    // revise this with the number of questions
     var possibleMax = 2 * n_questions; // this is the possible maximum score.
 
-    // runs on button click
+    // removes scores from questions when NA is selected
+    function notApplicable(x) {
+      if (document.getElementById('na' + x).checked) {
+        document.getElementById('q' + x + '-2').disabled = false
+        document.getElementById('q' + x + '-1').disabled = false
+        document.getElementById('q' + x + '-0').disabled = false
+        naCount = naCount - 2;
+      } else {
+        console.log("question " + x + " is not applicable");
+        document.getElementById('q' + x + '-2').disabled = true
+        document.getElementById('q' + x + '-1').disabled = true
+        document.getElementById('q' + x + '-0').disabled = true
+        naCount = naCount + 2;
+      }
+
+      console.log(naCount)
+    }
+
+
+
+    // runs on button click and provides final score
     function test() {
       // First set loops through score buttons, adding values to score
       var score = 0;
